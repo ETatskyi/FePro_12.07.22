@@ -1,0 +1,13 @@
+.usersContainer {
+    display:         flex;
+    flex-wrap:       wrap;
+    justify-content: space-around;
+}
+
+.card-user {
+    width:         30%;
+    padding:       5px;
+    border:        1px solid black;
+    border-radius: 2%;
+    margin-bottom: 25px;
+}
