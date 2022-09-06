@@ -3,7 +3,7 @@ fetch(`https://jsonplaceholder.typicode.com/users`)
     .then(users => {
         console.log(users)
         document.querySelector('body .wrapper').append(renderUsersCard(users))
-        addRemoveListeners('.card')
+        addListeners('.card')
     })
     .catch(err => console.error(err))
 
@@ -32,14 +32,18 @@ function renderUsersCard(users) {
     return fragment;
 }
 
-function addRemoveListeners(elements) {
+function addListeners(elements) {
     document.querySelectorAll(elements).forEach(card => {
         card.addEventListener('click', (event) => {
-            console.log(event.target)
+            // console.log(event.target)
             if (event.target.classList.contains('delete-button')) {
-                console.log(event.target.classList)
+                // console.log(event.target.classList)
                 card.remove()
             }
+
+            card.classList.toggle('active')
+            console.log(card)
+
         })
     }
     )

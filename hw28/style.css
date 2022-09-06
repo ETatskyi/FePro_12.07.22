@@ -8,7 +8,7 @@ body {
 .card {
   box-sizing:       border-box;
   padding:          5px 5px 5px 5px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
   border:           10px #000202;
   transition:       width 2s, background-color 1s, box-shadow 1s;
   border-radius:    10px;
@@ -22,6 +22,11 @@ body {
 }
 
 .card:hover {
+  box-shadow:       0 8px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.card.active {
   box-shadow:       0 8px 8px 0 rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 1);
 }
