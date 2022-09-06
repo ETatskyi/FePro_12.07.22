@@ -42,8 +42,6 @@ function addListeners(elements) {
             }
 
             card.classList.toggle('active')
-            console.log(card)
-
         })
     }
     )
