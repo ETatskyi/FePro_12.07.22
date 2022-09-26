@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <div class="wrapper">
+        <form class="create-new-user-form">
+            <h2>Creating new user</h2>
+            <div class="inputs">
+                <input type="text" id="newUser-name" class="new-user-input" placeholder="name" required>
+                <input type="text" id="newUser-company-name" class="new-user-input" placeholder="company name" required>
+                <input type="text" id="newUser-phone" class="new-user-input" placeholder="phone" required>
+                <input type="text" id="newUser-website" class="new-user-input" placeholder="website" required>
+            </div>
+
+            <button id="createNewUserButton" type="button">Create</button>
+
+            <div class="form-open-close-button">
+                <img src="src/open-close-button.png" alt="open-close-button" class="form-open-close-button">
+            </div>
+        </form>
+        <div class="card-container">
+        </div>
+    </div>
 </body>
+
 </html>

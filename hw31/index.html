@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storages
+    </title>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <form action="" id="login-form">
+            <input type="text" id="login" placeholder="login">
+            <input type="password" id="password" placeholder="password">
+            <button id="log-in-button" type="button">Go!</button>
+        </form>
+
+        <div id="hello-screen">
+            <h1>Hello <span id="username"></span>!</h1>
+        </div>
+    </div>
+</body>
+
+<style>
+    html,
+    body {
+        height: 100%;
+        background: grey;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    #login-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+        background: rgb(191, 191, 191);
+    }
+
+    input,
+    button {
+        margin: 15px;
+        text-align: center;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+</style>
+
+</html>
