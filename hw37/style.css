@@ -1,0 +1,198 @@
+body {
+    background:      linear-gradient(to right, #6641d7, #8ad4ff);
+    font-family:     Helvetica;
+    text-align:      center;
+    color:           black;
+    display:         flex;
+    justify-content: center;
+    width:           90%;
+  }
+  
+  .wrapper {
+    width: 90%;
+  }
+  
+  h2 {
+    margin: 10px;
+  }
+  
+  .card {
+    box-sizing:       border-box;
+    padding:          5px 5px 5px 5px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border:           10px #000202;
+    transition:       width 2s, background-color 1s, box-shadow 1s;
+    border-radius:    10px;
+    margin-top:       10px;
+    position:         relative;
+  
+    -webkit-box-shadow: 11px 6px 18px 3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow:    11px 6px 18px 3px rgba(0, 0, 0, 0.75);
+    box-shadow:         11px 6px 18px 3px rgba(0, 0, 0, 0.75);
+  }
+  
+  .card:hover {
+    box-shadow:       0 8px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgba(235, 191, 191, 0.6);
+  }
+  
+  .card.active {
+    box-shadow:       0 8px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(247, 255, 93);
+  }
+  
+  .card-container {
+    display:         flex;
+    justify-content: space-evenly;
+    flex-wrap:       wrap;
+  }
+  
+  #create-new-card-form {
+    position:        relative;
+    width:           100%;
+    border-radius:   15px;
+    background:      rgb(175, 246, 252);
+    padding:         5px;
+    max-height:      200px;
+    display:         flex;
+    flex-direction:  column;
+    justify-content: flex-start;
+    align-content:   center;
+    align-items:     center;
+    transition:      all 1s;
+  }
+  
+  #create-new-card-form.closed {
+    max-height: 40px;
+    overflow:   hidden;
+  }
+  
+  .inputs {
+    display:         flex;
+    flex-wrap:       wrap;
+    justify-content: space-evenly;
+    align-items:     center;
+    margin-bottom:   10px;
+    transition:      inherit;
+  }
+  
+  #create-new-card-form.closed .inputs,
+  #create-new-card-form.closed button {
+    opacity: 0;
+  }
+  
+  .new-user-input {
+    margin: 2px;
+    width:  40%;
+    background-color: white;
+    transition: background 3s;
+  }
+  
+  #createNewUserButton {
+    margin-bottom: 5px;
+    transition:    inherit;
+  }
+  
+  div.form-open-close-button {
+    position:   absolute;
+    width:      2em;
+    height:     2em;
+    /* opacity:    0; */
+    transition: transform 0.3s linear;
+    top:        0.5em;
+    right:      0.5em;
+  }
+  
+  div.form-open-close-button img {
+    width:  2em;
+    height: 2em;
+  }
+  
+  #create-new-card-form:not(.closed) div.form-open-close-button {
+    transform:  rotate(45deg);
+    transition: transform 0.3s linear;
+  }
+  
+  .invalid-field{
+    background-color: red;
+    transition: all 0s;
+  }
+  
+  /*BEGIN normal close button Classes*/
+  .delete-button-container {
+    position:   absolute;
+    top:        2%;
+    right:      2%;
+    width:      2em;
+    height:     2em;
+    opacity:    0;
+    transition: opacity 0.5s linear;
+  }
+  
+  .card:hover .delete-button-container {
+    opacity: 1;
+  }
+  
+  .delete-button-container:before {
+    content:       '';
+    position:      absolute;
+    top:           50%;
+    left:          50%;
+    transform:     translate(-50%, -50%);
+    height:        0;
+    width:         0;
+    border:        1em solid rgba(100, 100, 100, 0.8);
+    border-radius: 6em;
+    transition:    all 0.2s ease-in-out;
+  }
+  
+  .delete_icon {
+    transition:    all 0.075s ease-in-out;
+    position:      absolute;
+    width:         2em;
+    height:        2em;
+    top:           50%;
+    left:          50%;
+    transform:     translate(-50%, -50%);
+    border:        0.1em solid;
+    border-color:  rgba(250, 250, 250, 0.8);
+    border-radius: 6em;
+    /*background:                     rgba(255,255,255,0.8);*/
+  }
+  
+  .delete_icon:after {
+    transition:      all 0.075s ease-in-out;
+    font:            1em Helvetica, arial;
+    font-size:       1em;
+    width:           100%;
+    height:          100%;
+    content:         "x";
+    color:           rgba(250, 250, 250, 0.8);
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    transform:       translate(0, -5%) scale(1.25, 1);
+  }
+  
+  /*END normal close button Classes*/
+  
+  /*BEGIN First Close button Zoom and Shrink animations*/
+  
+  .delete-button-container.zoom_shrink:hover .delete_icon.zoom_shrink {
+    font-size: 1.2em;
+  }
+  
+  .delete-button-container.zoom_shrink:active:before {
+    border-color: rgba(200, 100, 100, 0.8);
+  }
+  
+  .delete-button-container.zoom_shrink:active .delete_icon.zoom_shrink {
+    font-size:    0.75em;
+    border-color: rgba(50, 50, 50, 0.8);
+  }
+  
+  .delete-button-container.zoom_shrink:active .delete_icon.zoom_shrink:after {
+    color: rgba(50, 50, 50, 0.8);
+  }
+  
+  /*END First Close button Zoom and Shrink animations*/
