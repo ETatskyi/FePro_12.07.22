@@ -27,13 +27,17 @@ const renderUser = ({ id, name, username, email, address, phone, website, compan
     const userCard = document.createElement('div');
 
     userCard.innerHTML = `<div>
-    Name: ${name} <br>
-    Username: ${username} <br>
+    id: ${id} <br>
+    name: ${name} <br>
+    username: ${username} <br>
     email: ${email} <br>
-    phone: ${phone}
+    phone: ${phone} <br>
+    address: ${address.city}, ${address.street}, ${address.suite}<br>
+    website: ${website}<br>
+    company: ${company.name}<br>
     </div>`;
 
-    //any info can be attached to card above, but author is too lazy to create a pretty card 😅
+    //card could be much prettier, but author is too lazy to aply styles 😅
 
     document.querySelector('body')
         .append(userCard)
