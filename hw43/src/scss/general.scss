@@ -1,0 +1,19 @@
+$font-stack: Helvetica, sans-serif;
+$highlight-color: lightblue;
+$passive-color: aquamarine;
+
+* {
+    box-sizing: border-box;
+}
+
+.round {
+    border-radius: 50%;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.hidden{
+    display: none;
+}
