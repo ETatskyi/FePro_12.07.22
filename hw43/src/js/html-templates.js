@@ -5,7 +5,7 @@ export const renderMoviesToSection = (movies_array, section_type) => {
     <div class="movies-type-container">
     ${movies_array.map(movie => renderMovie(movie)).join('')}
     </div>`;
-    drawPercentSector();
+    drawPercentSector(section_type);
 }
 
 export const renderMovie = ({ id, title, overview, poster_path, popularity, release_date, vote_average }) => (`<div class="movie-card">

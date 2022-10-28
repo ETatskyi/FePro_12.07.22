@@ -4,24 +4,22 @@ $radios: 'popular',
 'top_rated',
 'upcoming';
 
-input#popular:checked section.popular {
-    border: solid red 20px;
-
-}
+$piccker-heigth: 50px;
 
 input[type='radio'] {
     background-color: $passive-color;
     display:          none;
 
     +label {
-        cursor:                 pointer;
-        background-color:       $passive-color;
-        display:                inline-block;
-        width:                  120px;
-        margin:                 0;
-        height:                 50px;
-        vertical-align:         middle;
-        border-top-left-radius: 20px;
+        cursor:                  pointer;
+        background-color:        $passive-color;
+        display:                 inline-block;
+        width:                   120px;
+        margin:                  0;
+        height:                  $piccker-heigth;
+        line-height:              $piccker-heigth;
+        text-align:              center;
+        border-top-left-radius:  20px;
         border-top-right-radius: 20px;
 
         :before {
@@ -34,6 +32,10 @@ input[type='radio'] {
             margin-right:     10px;
             content:          '';
         }
+    }
+
+    ~#content section{
+        display: none;
     }
 }
 

@@ -12,8 +12,10 @@ export const dateConvert = (date) => new Date(date).toLocaleDateString();
 
 export const ratingToPercent = (number) => number * 10;
 
-export const drawPercentSector = () => {
-    for (let canvas of document.querySelectorAll(".percent-sector")) {
+export const drawPercentSector = (section) => {
+    const canvases = document.querySelectorAll("."+section+" canvas.percent-sector");
+    
+    for (let canvas of canvases) {
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetHeight;
         const percent = canvas.attributes.percentage.value;
