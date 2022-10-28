@@ -1,26 +1,53 @@
 @use "./general.scss";
 
-$radios: 'popular', 'top_rated', 'upcoming';
+$radios: 'popular',
+'top_rated',
+'upcoming';
 
 input#popular:checked section.popular {
     border: solid red 20px;
 
 }
 
-input[type='radio'],
-label {
+input[type='radio'] {
     background-color: $passive-color;
+    display:          none;
+
+    +label {
+        cursor:                 pointer;
+        background-color:       $passive-color;
+        display:                inline-block;
+        width:                  120px;
+        margin:                 0;
+        height:                 50px;
+        vertical-align:         middle;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+
+        :before {
+            width:            80px;
+            height:           80px;
+            border-radius:    0 40px 40px 0;
+            background-color: #FFF;
+            display:          inline-block;
+            vertical-align:   middle;
+            margin-right:     10px;
+            content:          '';
+        }
+    }
 }
 
+
 input[type='radio']:checked {
-    border:           none;
-    background-color: $highlight-color;
+    +label {
+        background-color: $highlight-color;
+    }
 }
 
 
 @each $radio in $radios {
-  input[type='radio'].#{$radio}:checked ~ #content section.#{$radio} {
-    display: block;
-    background-color: lightblue;
-  }
+    input[type='radio'].#{$radio}:checked~#content section.#{$radio} {
+        display:          block;
+        background-color: lightblue;
+    }
 }

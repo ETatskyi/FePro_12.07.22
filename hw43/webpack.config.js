@@ -1,5 +1,6 @@
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const DotenvPlugin = require('webpack-dotenv-plugin');
 const path = require('path');
@@ -20,6 +21,10 @@ module.exports = (_, {mode}) => {
       splitChunks: {
         chunks: 'all'
       },
+      minimize: true,
+      minimizer: [
+        new HtmlMinimizerPlugin(),
+      ],
     },
     devtool: isDev(mode) && 'source-map',
     devServer: {
@@ -40,7 +45,7 @@ module.exports = (_, {mode}) => {
           {
             from: path.resolve(__dirname, 'src/assets/favicon.ico'),
             to: path.resolve(__dirname, 'dist')
-          }
+          },
         ],
       }),
       new DotenvPlugin({
