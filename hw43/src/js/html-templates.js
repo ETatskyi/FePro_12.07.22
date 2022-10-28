@@ -17,7 +17,7 @@ export const renderMovie = ({ id, title, overview, poster_path, popularity, rele
     </a>
     <span class="release-date">${dateConvert(release_date)}</span>
     <div class="rating-frame round absolute">
-        <canvas class="percent-sector absolute" percentage="${ratingToPercent(vote_average)}">
+        <canvas height="40" width="40" class="percent-sector absolute" percentage="${ratingToPercent(vote_average)}">
         </canvas>
         <span class="absolute">${ratingToPercent(vote_average)}%</span>
     </div>

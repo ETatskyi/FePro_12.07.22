@@ -14,14 +14,16 @@ export const ratingToPercent = (number) => number * 10;
 
 export const drawPercentSector = (section) => {
     const canvases = document.querySelectorAll("."+section+" canvas.percent-sector");
-    
+
     for (let canvas of canvases) {
-        canvas.width = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
+
+        canvas.width = canvas.offsetWidth || canvas.width;
+        canvas.height = canvas.offsetHeight || canvas.height;
+
         const percent = canvas.attributes.percentage.value;
         const perc = percent / 100;
-        const h = canvas.clientHeight;
-        const w = canvas.clientWidth;
+        const h = canvas.height;
+        const w = canvas.width;
         const centerX = w / 2;
         const centerY = h / 2;
 
