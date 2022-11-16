@@ -2,13 +2,13 @@ import React from "react";
 
 import './styles.scss';
 
-const Item = ({ id, value, onRemoveTodo }) => (
-  <li className="item">
+const Item = ({ id, value, onRemoveTodo, onCheckTodo, checked }) => (
+  <li className={checked? "item checked" : "item"}>
     <div className="value">
       <input
         className="check"
         type="checkbox"
-        onClick={() => console.log('Write your logic for check todo here')}
+        onClick={() => onCheckTodo(id)}
       />
       {value}
     </div>
