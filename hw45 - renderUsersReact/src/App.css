@@ -1,0 +1,11 @@
+body {
+  background:  linear-gradient(to right, #6641d7, #8ad4ff);
+  font-family: Helvetica;
+  text-align:  center;
+}
+
+.wrapper {
+  display:         flex;
+  justify-content: space-evenly;
+  flex-wrap:       wrap;
+}
