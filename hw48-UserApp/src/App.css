@@ -1,0 +1,11 @@
+#root {
+  display:        flex;
+  flex-direction: column;
+  align-items:    center;
+}
+
+body {
+  background:  linear-gradient(to right, #6641d7, #8ad4ff);
+  font-family: Helvetica;
+  text-align:  center;
+}
