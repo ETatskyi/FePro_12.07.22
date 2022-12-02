@@ -8,7 +8,7 @@ const store = createStore(todos, composeWithDevTools())
 
 store.subscribe(() => {
     console.log(store.getState())
-    localStorage.setItem('state', JSON.stringify(store.getState()))
+    localStorage.setItem('todos', JSON.stringify(store.getState()))
 })
 
 export default store;

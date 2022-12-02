@@ -1,6 +1,6 @@
 import { ADD_TODO, CHECK_TODO, DELETE_TODO } from './types';
 
-const initialTodos = JSON.parse(localStorage.getItem('state'));
+const initialTodos = JSON.parse(localStorage.getItem('todos')) || [];
 
 const todos = (state = initialTodos, action) => {
     switch (action.type) {
