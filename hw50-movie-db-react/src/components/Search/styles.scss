@@ -1,0 +1,45 @@
+@import 'colors.scss';
+
+#search-form {
+    display:       flex;
+    background:    $header-box-color;
+    padding:       7px;
+    border-radius: 15px;
+
+    & input {
+        display:        flex;
+        flex-direction: row;
+        align-items:    flex-start;
+        padding:        15px 10px;
+        height:         1em;
+
+        border:        none;
+        border-color:  $basic-grey;
+        border-radius: 12px;
+        margin-right:  5px;
+
+        &:focus-visible {
+            outline-width: 0;
+        }
+
+        &:invalid {
+            background-color: $invalid-color;
+        }
+
+    }
+
+    & button[type='submit'] {
+        border:        none;
+        border-radius: 10%;
+    }
+}
+
+.form-error{
+    position: fixed;
+    color: $invalid-color;
+    top: 75px;
+    background: $basic-grey;
+    line-height: 25px;
+    border-radius: 5px;
+    padding: 5px;
+}

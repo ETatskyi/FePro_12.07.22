@@ -1,0 +1,23 @@
+@import 'colors.scss';
+
+.app-logo {
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    margin:          0;
+    padding:         7px;
+    border-radius:   15px;
+    font-size:       1.5em;
+    font-weight:     bold;
+    text-decoration: none;
+    color:           black;
+
+    height: 45px;
+
+    background: $header-box-color;
+
+    &:hover {
+        color:      black;
+        background: $header-box-hover-color;
+    }
+}
