@@ -1,16 +1,21 @@
 import { useState, useEffect } from "react";
+import { MOVIE_URL, API_KEY } from "utils/constants";
 
-const useGetMoviesType = url => {
+const useGetMovieDetails = id => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        fetch(url)
+        fetch(`${MOVIE_URL}/${id}?api_key=${API_KEY}`)
             .then(resp => resp.json())
             .then(setData)
             .catch(console.log);
     },[]);
 
+    if(!data.title){
+        return data.status_message
+    }
+
     return data
 }
 
-export default useGetMoviesType;
+export default useGetMovieDetails;

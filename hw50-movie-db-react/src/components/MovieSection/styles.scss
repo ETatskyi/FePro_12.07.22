@@ -1,3 +1,8 @@
-#page-content {
-    // overflow-y: scroll;
+.movies-section{
+    display: flex;
+    flex-direction: row;
+
+    & .movie-card{
+        margin: 9px;
+    }
 }

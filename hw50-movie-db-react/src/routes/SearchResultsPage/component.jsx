@@ -1,10 +1,20 @@
 import './styles.scss';
+import { useParams } from 'react-router';
+import useGetSearchResults from 'hooks/useSearchMovies';
 
-const Home = () => (
-    <>
-        <h1>Welcome to search result!</h1>
+import LoadingSpinner from 'components/LoadingSpinner';
+import SearchResultList from 'components/SearchResultList';
+
+const SearchResultPage = () => {
+    const { query } = useParams();
+    const results = useGetSearchResults(query);
+    console.log(query)
+
+    return (<>
+        {!results ? <LoadingSpinner /> : <SearchResultList list={results} />}
     </>
-)
+    )
+}
 
 
-export default Home;
+export default SearchResultPage;

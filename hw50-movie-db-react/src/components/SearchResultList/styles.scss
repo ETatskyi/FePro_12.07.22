@@ -1,0 +1,17 @@
+.search-list-container {
+    width: 100%;
+}
+
+.search-list-item {
+    border-bottom: 1px solid black;
+
+    & a {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        & .search-list-movie-poster{
+            margin: 10px;
+        }
+    }
+}
