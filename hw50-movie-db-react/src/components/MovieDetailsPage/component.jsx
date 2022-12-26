@@ -4,9 +4,7 @@ import {
     dateConvert,
 } from 'utils/utils';
 
-const MovieDetails = ({ movie }) => {
-    console.log(movie)
-    const { title, tagline, status, overview, release_date, poster_path, backdrop_path, vote_average, vote_count, genres, production_countries } = movie;
+const MovieDetails = ({ id, title, tagline, status, overview, release_date, poster_path, backdrop_path, vote_average, vote_count, genres, production_countries }) => {
 
     return (
         <div
@@ -26,7 +24,7 @@ const MovieDetails = ({ movie }) => {
             <div className="movie-info">
                 <h1 className='movie-title'>{title}</h1>
                 <span className='tagline'>{tagline}</span>
-                
+
                 {status === "Released" ?
                     <span className='release-date'>Released: {dateConvert(release_date)}</span>
                     :
@@ -35,11 +33,11 @@ const MovieDetails = ({ movie }) => {
                 <span className='rating'>Rating: {vote_average} ({vote_count} votes)</span>
                 <dl className='genres'>
                     <dt>Genres:</dt>
-                    {genres.map(g => <dd className='genre-item'>{g.name}</dd>)}
+                    {genres?.map((item, index) => <dd className='genre-item' key={index}>{item.name}</dd>)}
                 </dl>
                 <dl className='countries'>
                     <dt>Countries:</dt>
-                    {production_countries.map(c => <dd className='genre-item'>{c.name}</dd>)}
+                    {production_countries?.map((item, index) => <dd className='genre-item' key={index}>{item.name}</dd>)}
                 </dl>
                 <p className="overview">{overview}</p>
             </div>

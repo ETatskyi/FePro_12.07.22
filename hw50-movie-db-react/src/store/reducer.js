@@ -1,33 +1,43 @@
-import { ADD_TODO, CHECK_TODO, DELETE_TODO } from './types';
+import {
+    SET_MOVIES_TO_SECTION,
+    SET_SEARCH_RESULTS,
+    SET_CURRENT_MOVIE,
+} from './types';
 
-const initialTodos = JSON.parse(localStorage.getItem('todos')) || [];
+const initialState = {
+    popular: [],
+    top_rated: [],
+    upcoming: [],
+    searchResult: [],
+    currentMovie: {},
+};
 
-const todos = (state = initialTodos, action) => {
+const movies = (state = initialState, action) => {
     switch (action.type) {
 
-        case ADD_TODO: {
-            return [
-                ...state,
-                {
-                    value: action.payload.todo,
-                    checked: false,
-                    id: Math.floor(Math.random() * 9999)
-                },
-            ]
+        case SET_MOVIES_TO_SECTION: {
+            let newState = { ...state };
+            const { section, result } = action.payload;
+
+            newState[section] = result;
+
+            return { ...newState }
         }
 
-        case CHECK_TODO: {
-            const target = action.payload;
-            const newState = state.map(el => el.id == target ? { ...el, checked: !el.checked } : el);
-
-            return [...newState]
+        case SET_SEARCH_RESULTS: {
+            let newState = { ...state };
+            const result = action.payload;
+            console.log(result)
+            newState.searchResult = result;
+            return { ...newState }
         }
 
-        case DELETE_TODO: {
-            const target = action.payload;
-            const newState = state.filter(el => el.id != target);
+        case SET_CURRENT_MOVIE: {
+            let newState = { ...state };
 
-            return [...newState]
+            newState.currentMovie = action.payload;
+
+            return { ...newState }
         }
 
         default:
@@ -35,4 +45,4 @@ const todos = (state = initialTodos, action) => {
     }
 }
 
-export { todos };
+export { movies };

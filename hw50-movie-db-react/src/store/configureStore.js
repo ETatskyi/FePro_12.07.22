@@ -1,14 +1,13 @@
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import { todos } from './reducer';
+import { movies } from './reducer';
 
-const store = createStore(todos, composeWithDevTools())
+const store = createStore(movies, composeWithDevTools())
 
 
 store.subscribe(() => {
-    console.log(store.getState())
-    localStorage.setItem('todos', JSON.stringify(store.getState()))
+    localStorage.setItem('movies', JSON.stringify(store.getState()))
 })
 
 export default store;

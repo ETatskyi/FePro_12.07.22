@@ -1,23 +1,34 @@
 import './styles.scss';
-import useGetMoviesByType from 'hooks/useGetMoviesByType';
-import LoadingSpinner from 'components/LoadingSpinner';
+import { connect } from 'react-redux';
 
+import { setSectionMovies } from 'store/actions';
+
+import useGetSection from 'hooks/useGetSection';
+
+import LoadingSpinner from 'components/LoadingSpinner';
 import MovieCard from 'components/MovieCard';
 
-const MoviesSection = ({ type }) => {
-    const movies = useGetMoviesByType(type);
-    console.log(movies)
 
-    if (!Array.isArray(movies)) {
-        return <LoadingSpinner/>
+const MoviesSection = ({ type, sections, setSectionMovies }) => {
+    useGetSection(type, setSectionMovies);
+
+    if (!sections[type].length) {
+        return <LoadingSpinner />
     }
 
     return (
         <div className='movies-section'>
-            {movies.map((movie) => <MovieCard movie={movie} key={movie.id} />)}
+            {sections[type].map((movie) => <MovieCard {...movie} key={movie.id} />)}
         </div>
     )
 }
 
+const mapStateToProps = (state) => ({
+    sections: state,
+})
 
-export default MoviesSection;
+const mapDispatchToProps = {
+    setSectionMovies
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MoviesSection);

@@ -1,21 +1,14 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { MOVIE_URL, API_KEY } from "utils/constants";
 
-const useGetMovieDetails = id => {
-    const [data, setData] = useState([]);
+const useGetMovieDetails = (id, storeSetter) => {
 
     useEffect(() => {
         fetch(`${MOVIE_URL}/${id}?api_key=${API_KEY}`)
             .then(resp => resp.json())
-            .then(setData)
+            .then(data => storeSetter(data))
             .catch(console.log);
-    },[]);
-
-    if(!data.title){
-        return data.status_message
-    }
-
-    return data
+    }, [id, storeSetter]);
 }
 
 export default useGetMovieDetails;

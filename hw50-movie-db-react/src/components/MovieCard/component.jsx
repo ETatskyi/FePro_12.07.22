@@ -10,8 +10,7 @@ import { Link } from 'react-router-dom';
 
 const { Meta } = Card;
 
-const MovieCard = ({ movie }) => {
-    const { id, title, release_date, poster_path, vote_average, vote_count } = movie;
+const MovieCard = ({ id, title, release_date, poster_path, vote_average, vote_count }) => {
 
     const width = 240;
 

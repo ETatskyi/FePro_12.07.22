@@ -1,3 +1,3 @@
-export const ADD_TODO = 'ADD_TODO';
-export const CHECK_TODO = 'CHECK_TODO';
-export const DELETE_TODO = 'DELETE_TODO';
+export const SET_MOVIES_TO_SECTION = 'SET_MOVIES_TO_SECTION';
+export const SET_SEARCH_RESULTS = 'SET_SEARCH_RESULTS';
+export const SET_CURRENT_MOVIE = 'SET_CURRENT_MOVIE';

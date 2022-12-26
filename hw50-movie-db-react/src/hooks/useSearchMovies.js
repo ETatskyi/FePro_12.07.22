@@ -1,21 +1,13 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { SEARCH_URL, API_KEY } from "utils/constants";
 
-const useGetSearchResults = query => {
-    const [data, setData] = useState([]);
-
+const useGetSearchResults = (query, storeSetter) => {
     useEffect(() => {
         fetch(`${SEARCH_URL}/?query=${query}&api_key=${API_KEY}`)
             .then(resp => resp.json())
-            .then(setData)
+            .then(data => storeSetter(data.results))
             .catch(console.log);
-    },);
-
-    if(!data.results){
-        return data.status_message
-    }
-
-    return data.results
+    }, [query, storeSetter]);
 }
 
 export default useGetSearchResults;

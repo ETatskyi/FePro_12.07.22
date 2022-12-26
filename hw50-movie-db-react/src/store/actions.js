@@ -1,14 +1,14 @@
-export const addToDo = (payload) => ({
-    type: 'ADD_TODO',
+export const setSectionMovies = (payload) => ({
+    type: 'SET_MOVIES_TO_SECTION',
     payload
 });
 
-export const checkToDo = (payload) => ({
-    type: 'CHECK_TODO',
+export const setSearchResults = (payload) => ({
+    type: 'SET_SEARCH_RESULTS',
     payload
 });
 
-export const deleteToDo = (payload) => ({
-    type: 'DELETE_TODO',
+export const setCurrentMovie = (payload) => ({
+    type: 'SET_CURRENT_MOVIE',
     payload
 });

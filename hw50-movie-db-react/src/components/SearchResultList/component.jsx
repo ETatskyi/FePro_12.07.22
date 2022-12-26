@@ -11,7 +11,6 @@ const SearchResultList = ({ list }) => {
             dataSource={list}
             renderItem={({ id, title, poster_path, release_date, overview }) => {
 
-                console.log(release_date)
                 return (
                     <List.Item className='search-list-item'>
                         <Link key={id} to={'/details/' + id} >
